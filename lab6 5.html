@@ -1,0 +1,59 @@
+<!--question 5-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Grade Checker</title>
+</head>
+<body>
+
+    <h2>Student Grade Checker</h2>
+
+    <label>Student Name:</label>
+    <input type="text" id="studentName">
+
+    <br><br>
+
+    <label>Examination Mark:</label>
+    <input type="number" id="mark">
+
+    <br><br>
+
+    <button onclick="checkGrade()">Check Grade</button>
+
+    <p id="result"></p>
+
+    <script>
+        function checkGrade() {
+
+            let name = document.getElementById("studentName").value;
+            let mark = Number(document.getElementById("mark").value);
+            let grade;
+
+            if (mark >= 80 && mark <= 100) {
+                grade = "A";
+            }
+            else if (mark >= 70 && mark < 80) {
+                grade = "B";
+            }
+            else if (mark >= 60 && mark < 70) {
+                grade = "C";
+            }
+            else if (mark >= 50 && mark < 60) {
+                grade = "D";
+            }
+            else if (mark >= 0 && mark < 50) {
+                grade = "F";
+            }
+            else {
+                grade = "Invalid Mark";
+            }
+
+            document.getElementById("result").innerHTML =
+                "Student Name: " + name + "<br>" +
+                "Examination Mark: " + mark + "<br>" +
+                "Grade: " + grade;
+        }
+    </script>
+
+</body>
+</html>
